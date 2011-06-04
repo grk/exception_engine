@@ -9,14 +9,18 @@ Gem::Specification.new do |s|
   s.homepage    = "http://github.com/Consoci8/exception_engine"
   s.authors     = ["Muhammad Fadhli Rahim"]
   s.email       = "fadhlirahim@gmail.com"
-   
+
   s.files = Dir["lib/**/*"] + ["Gemfile", "Gemfile.lock", "GPLv3.txt", "LICENSE.txt", "Rakefile", "README.rdoc"] + Dir["app/**/*"] + ["config/routes.rb"]
   s.test_files = Dir["test/**/*"]
   s.version = ExceptionEngine::VERSION.dup
-  
+
   s.require_paths = ["lib"]
-  s.add_dependency("mongoid", "2.0.0.rc.5")
-  s.add_dependency("bson_ext", "1.2.4")
+  s.add_dependency("mongoid", ">= 2.0.0")
+  s.add_dependency("bson_ext", ">= 1.3.0")
+  s.add_dependency("rails", ">= 3.1.0.rc1")
+
+  s.add_development_dependency("capybara", ">= 0.4.0")
+  s.add_development_dependency("sqlite3-ruby")
 end
 
- 
+
