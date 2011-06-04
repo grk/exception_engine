@@ -16,7 +16,7 @@ end
 
 module ExceptionEngine
   class << self
-    
+
     # Stores the notice exception
     # @see ExceptionEngine.exceptionize
     # @params exception
@@ -24,11 +24,11 @@ module ExceptionEngine
       notice = build_notice_for(exception, opts)
       ExceptionEngine::Data.store!(notice)
     end
-       
+
     private
-    
+
     def build_notice_for(exception, opts = {})
-      exception = unwrap_exception(exception)  
+      exception = unwrap_exception(exception)
       if exception.respond_to?(:to_hash)
         opts = opts.merge(exception.to_hash)
       else
@@ -36,7 +36,7 @@ module ExceptionEngine
       end
       Notice.new(opts)
     end
-    
+
     def unwrap_exception(exception)
       if exception.respond_to?(:original_exception)
         exception.original_exception
@@ -46,6 +46,6 @@ module ExceptionEngine
         exception
       end
     end
-    
+
   end
 end

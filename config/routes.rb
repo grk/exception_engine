@@ -1,3 +1,3 @@
-Rails.application.routes.draw do
+ExceptionEngine::Engine.routes.draw do
   resources :exceptions, :only => [:index, :destroy]
 end
