@@ -5,14 +5,14 @@ require "exception_engine/exception_middleware"
 require "exception_engine/engine"
 
 # We are required to choose a database name, unless mongoid is already configured
-if Mongoid.config.databases.empty?
-  Mongoid.configure do |config|
-    name = "exception_engine-#{Rails.env}"
-    host = "localhost"
-    config.master = Mongo::Connection.new.db(name)
-    config.persist_in_safe_mode = false
-  end
-end
+#if Mongoid.config.databases.empty?
+#  Mongoid.configure do |config|
+#    name = "exception_engine-#{Rails.env}"
+#    host = "localhost"
+#    config.master = Mongo::Connection.new.db(name)
+#    config.persist_in_safe_mode = false
+#  end
+#end
 
 module ExceptionEngine
   class << self
